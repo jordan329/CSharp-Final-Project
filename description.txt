@@ -1,34 +1,42 @@
+DESCRIPTION: 
+    this is an application that includes front and backend implementation for interfacing with
+    google maps api. the backend talks to the google and passes info to be displayed on the frontend,
+
+    the frontend displays information from the backend and makes calls to update its view. 
+
 DESCRIPTION FOR FRONTEND
 
-This application is a c# frontend to a dotnet core backend that I wrote (which I will also include).
-this application is for viewing information supplied by google maps about pizza places.
+    This application is a c# frontend to a dotnet core backend that I wrote (which I will also include).
+    this application is for viewing information supplied by google maps about pizza places.
 
-Simply type a zipcode into the textbox labeled "zip code" and press the "search zip" button,
-and the application will make a get request to the API.
+    Simply type a zipcode into the textbox labeled "zip code" and press the "search zip" button,
+    and the application will make a get request to the API.
 
-The API sends back JSON which is used to populate the "pizza place list" listbox.
-Each item has a name and placeID property.
+    The API sends back JSON which is used to populate the "pizza place list" listbox.
+    Each item has a name and placeID property.
 
-Once you click on an option more details are displayed based on a second get request sent
-to the API which contains a placeID.
-That placeID is then used to send back more JSON which gives more details
-about the specific pizza place selected in the "pizza place list" listbox.
+    Once you click on an option more details are displayed based on a second get request sent
+    to the API which contains a placeID.
+    That placeID is then used to send back more JSON which gives more details
+    about the specific pizza place selected in the "pizza place list" listbox.
 
-By clicking "Save Details" you can save the currently selected pizza places details in a .txt file.
+    By clicking "Save Details" you can save the currently selected pizza places details in a .txt file.
 
-I relied heavily on Newtonsoft.Json, Newtonsoft.Json.Linq to traverse the JSON sent by my api and use
-the information sent to the application effectively
+    I relied heavily on Newtonsoft.Json, Newtonsoft.Json.Linq to traverse the JSON sent by my api and use
+    the information sent to the application effectively
 
 DESCRIPTION FOR BACKEND
 
-This API is a c# dotnet core backend for a few applications I've coded over the course of the semester.
+    This API is a c# dotnet core backend for a few applications I've coded over the course of the semester.
+    NOTE: this code is running on aws lambda, if you want to run this code locally you can but the frontend
+    is hitting this api on AWS lambda so running this code is not necessary 
 
-It has a PlacesController which uses a PlacesCaller class which uses System.Net.Http to send
-an asynchronous api call (get request with zipcode)to google places api
-and returns that JSON to an application that makes a request to my API.
+    It has a PlacesController which uses a PlacesCaller class which uses System.Net.Http to send
+    an asynchronous api call (get request with zipcode)to google places api
+    and returns that JSON to an application that makes a request to my API.
 
-It has a DetailsController which uses a DetailsCaller classwhich uses System.Net.Http to send
-an asynchronous api call to google places api (get request with placeID)to google places api
-and returns that JSON to an application that makes a request to my API.
+    It has a DetailsController which uses a DetailsCaller classwhich uses System.Net.Http to send
+    an asynchronous api call to google places api (get request with placeID)to google places api
+    and returns that JSON to an application that makes a request to my API.
 
 
