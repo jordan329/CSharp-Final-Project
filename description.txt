@@ -4,6 +4,9 @@ DESCRIPTION:
     the frontend which displays information from the backend and makes get requests to it to update its view. 
 
 DESCRIPTION FOR FRONTEND
+Code located at: C:\Users\Jliebman\Desktop\C# Final Project\Frontend\Final\TestWPF
+
+Double click the file Final.csproj at that location to open the code in Visual Studio
 
     This application is a c# WPF frontend to a dotnet core backend that I wrote (which I will also include).
     this application is for viewing information supplied by google places about pizza places.
@@ -32,11 +35,12 @@ DESCRIPTION FOR FRONTEND
     I also used the students/class list assignment xaml as a starting point for the application view.
 
 DESCRIPTION FOR BACKEND
+Code located at: C# Final Project\Backend\hackweek\api\dotnet-api-example\src\dotnet-api-example\Controllers
+
+NOTE: this code is running on aws lambda, if you want to run this code locally you can but the frontend
+is hitting this api on AWS lambda so running this code is not necessary 
 
     This API is a c# dotnet core backend for a few applications I've coded over the course of the semester.
-    
-    NOTE: this code is running on aws lambda, if you want to run this code locally you can but the frontend
-    is hitting this api on AWS lambda so running this code is not necessary 
 
     It has a PlacesController which uses a PlacesCaller class which uses System.Net.Http to send
     an asynchronous api call (get request with zipcode)to google places api
